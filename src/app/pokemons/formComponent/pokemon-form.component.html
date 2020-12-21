@@ -1,0 +1,92 @@
+<form *ngIf="pokemon" (ngSubmit)="onSubmit()" #pokemonForm="ngForm"> <!--event binding-->
+    <div class="container">
+        <div class="col s8 m10 ">
+            <div class="card-panel" style="padding: 5%;">
+
+                <!-- Pokemon name -->
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name"
+                           required
+                           pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+                           [(ngModel)]="pokemon.name" name="name"
+                           #name="ngModel"> <!--liaison bidirectionel (2 way data binding)entre composant et template-->
+
+                    <div [hidden]="name.valid || name.pristine"
+                         class="card-panel red accent-1">
+                        The name of your pokemon is needed (1-25).
+                    </div> <!--data binding-->
+                </div>
+
+                <!-- Pokemon hp -->
+                <div class="form-group">
+                    <label for="hp">Hit points (HP)</label>
+                    <input type="number" class="form-control" id="hp"
+                           required
+                           pattern="^[0-9]{1,3}$"
+                           [(ngModel)]="pokemon.hp" name="hp"
+                           #hp="ngModel">
+                    <div [hidden]="hp.valid || hp.pristine"
+                         class="card-panel red accent-1">
+                        The hit points (HP) of the pokemon have to be between 0 and 999.
+                    </div>
+                </div>
+
+                <!-- Pokemon cp -->
+                <div class="form-group">
+                    <label for="cp">Combat power (CP)</label>
+                    <input type="number" class="form-control" id="cp"
+                           required
+                           pattern="^[0-9]{1,2}$"
+                           [(ngModel)]="pokemon.cp" name="cp"
+                           #cp="ngModel">
+                    <div [hidden]="cp.valid || cp.pristine"
+                         class="card-panel red accent-1">
+                        The combat power (CP) of the pokemon has to be between 0 and 99.
+                    </div>
+                </div>
+
+                <!-- Pokemon types -->
+                <form class="form-group">
+                    <label for="types">Types</label>
+                    <div class="row">
+                        <p *ngFor="let type of types" class="col s6">
+                            <label>
+                                <input type="checkbox"
+                                       class="filled-in"
+                                       id="{{ type }}"
+                                       [value]="type"
+                                       [checked]="hasType(type)"
+                                       [disabled]="!isTypesValid(type)"
+                                       (change)="selectType($event, type)"/>
+                                <span [attr.for]="type">
+                                    <div class="{{ type | pokemonTypeColor }}">
+                                      {{ type }}
+                                    </div>
+                                </span>
+                            </label>
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Submit button -->
+                <div class="divider"></div>
+                <div class="section center">
+                    <button type="submit"
+                            class="waves-effect waves-light btn"
+                            [disabled]="!pokemonForm.form.valid">
+                        Save
+                    </button>
+                    <div [hidden]="pokemonForm.form.valid"
+                         class="card-panel red accent-1">
+                        Enter/Correct Pokemon's infos.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+<h4 *ngIf='!pokemon' class="center">
+    <pkmn-loader></pkmn-loader>
+</h4>

@@ -1,0 +1,51 @@
+<div *ngIf="pokemon" class="row">
+    <div class="col s12 m8 offset-m2">
+        <h3 class="header center"><strong>{{ pokemon.name }}</strong></h3>
+        <div class="card-image center">
+            <img [src]="pokemon.picture" class="hide-on-large-only center">
+        </div>
+        <div class="card horizontal hoverable">
+            <div class="card-image">
+                <img [src]="pokemon.picture" class="hide-on-med-and-down">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <table class="bordered striped">
+                        <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td><strong>{{ pokemon.name }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Hit points (HP)</td>  <!--Points de vie-->
+                            <td><strong>{{ pokemon.hp }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Combat power (CP)</td><!--Dégâts-->
+                            <td><strong>{{ pokemon.cp }}</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Type/s</td>
+                            <td>
+                                <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor }}">{{ type }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Creation date</td>
+                            <td><em>{{ pokemon.created | date:"dd/MM/yyyy" }}</em></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-action">
+                    <a [ngStyle]="{'cursor':'pointer'}" (click)="goBack()">Back</a>
+                    <a [ngStyle]="{'cursor':'pointer'}" (click)="goEdit(pokemon)">Edit</a>
+                    <a [ngStyle]="{'cursor':'pointer'}" (click)="goDelete(pokemon)">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h4 *ngIf='!pokemon' class="center">
+    <pkmn-loader></pkmn-loader>
+</h4>

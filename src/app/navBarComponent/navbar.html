@@ -1,0 +1,38 @@
+<nav>
+
+    <div class="nav-wrapper ">
+        <a
+                (click)="goHome()"
+                [ngStyle]="{'cursor':'pointer'}"
+                class="brand-logo center hide-on-med-and-down">
+            {{myTitle}}
+        </a>
+        <a
+                (click)="goHome()"
+                [ngStyle]="{'cursor':'pointer'}"
+                style="margin-left: 10px"
+                *ngIf="!authService._isLoggedIn">
+            <img class="brand-logo left"
+                 src="https://cdn.pixabay.com/photo/2016/08/15/00/50/pokeball-1594373_960_720.png"
+                 alt="Pokeball">
+        </a>
+        <a
+                (click)="goHome()"
+                [ngStyle]="{'cursor':'pointer'}"
+                style="margin-left: 10px"
+                *ngIf="authService._isLoggedIn">
+            <img class="brand-logo left PokeballOpened"
+                 src="https://cdn.pixabay.com/photo/2019/11/18/15/46/pokemon-4635112_960_720.png"
+                 alt="PokeballOpened">
+        </a>
+        <a
+                 class="new badge right"
+                 [ngStyle]="{'cursor':'pointer'}"
+                (click)="logout()"
+                *ngIf="authService._isLoggedIn"
+                style="margin-right: 10px">
+           logout
+        </a>
+    </div>
+
+</nav>

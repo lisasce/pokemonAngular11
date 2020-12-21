@@ -1,0 +1,19 @@
+h6 {
+    color: #4db6ac;
+    font-weight: bold;
+}
+
+.pokFace {
+    width: 70%;
+    max-width: 100%;
+
+}
+
+.typeBox, pokemon-search{
+    margin-top: 10px;
+}
+
+#button{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}

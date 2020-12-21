@@ -1,0 +1,58 @@
+<!--add pokemon section-->
+
+<div class='container '>
+    <div class="col s6 m4 card-panel teal lighten-4">
+        <div class="center-align">
+            <h5 >To add a Pokemon, click here:</h5>
+        </div>
+        <div id="button" class="center-align">
+            <a class="btn-floating btn-large waves-effect waves-light pulse"
+               (click)="goToAdd()" >
+                <i class="material-icons" >add</i>
+            </a>
+        </div>
+
+        <!--search pokemon section START-->
+
+        <pokemon-search></pokemon-search>
+
+        <!--search pokemon section END-->
+
+    </div>
+
+</div>
+
+<!--show pokemon's list section-->
+
+<div class='container'>
+
+    <div class="row">
+        <div *ngFor='let pokemon of pokemons' class="col s6 m3 " >
+
+            <div class="card"
+                 (click)="selectPokemon(pokemon)"
+                 pkmnBorderCard="#26A69A"
+                 [ngStyle]="{'cursor':'pointer'}">
+
+                <div class="center">
+                    <img class="pokFace" [src]="pokemon.picture">
+
+                </div>
+                <div class="card-content center">
+                    <h6>{{ pokemon.name }}</h6>
+                    <p class="hide-on-med-and-down">
+                        <small>{{ pokemon.created | date:"dd/MM/yyyy" }}</small>
+                    </p>
+                    <div class="typeBox">
+                        <span *ngFor='let type of pokemon.types'
+                              class="{{ type | pokemonTypeColor }} hide-on-med-and-down">
+                        {{ type }}
+                        </span>
+                    </div>
+                </div>
+             </div>
+
+        </div>
+    </div>
+
+</div>

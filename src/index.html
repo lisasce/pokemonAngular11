@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="/"> <!--definit l'url de base d un document-->
+        <title>Angular 9 Pokemon App</title>
+        <base href="/">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Polyfill(s) for older browsers -->
+        <script src="https://unpkg.com/core-js@2.5.4/client/shim.min.js"></script>
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+        <script src="systemjs.config.js"></script>
+        <script>
+            System.import('main.js').catch(function(err){ console.error(err); });
+        </script>
+
+
+        <!-- Compiled and minified CSS materializecss-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./styles.css">
+
+
+
+        <!-- Compiled and minified JavaScript materializecss -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>
+
+
+    </head>
+
+    <body>
+        <pokemon-app>Loading AppComponent content here ...</pokemon-app>
+    </body>
+</html>
