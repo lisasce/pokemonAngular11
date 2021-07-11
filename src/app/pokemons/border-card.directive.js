@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.BorderCardDirective = void 0;
 var core_1 = require("@angular/core");
 var BorderCardDirective = /** @class */ (function () {
     function BorderCardDirective(el) {
@@ -39,6 +40,7 @@ var BorderCardDirective = /** @class */ (function () {
     BorderCardDirective.prototype.setWidth = function (width) {
         this.el.nativeElement.style.height = width + '%';
     };
+    var _a;
     __decorate([
         core_1.Input('pkmnBorderCard'),
         __metadata("design:type", String)
@@ -59,7 +61,7 @@ var BorderCardDirective = /** @class */ (function () {
         core_1.Directive({
             selector: '[pkmnBorderCard]'
         }),
-        __metadata("design:paramtypes", [core_1.ElementRef])
+        __metadata("design:paramtypes", [typeof (_a = typeof core_1.ElementRef !== "undefined" && core_1.ElementRef) === "function" ? _a : Object])
     ], BorderCardDirective);
     return BorderCardDirective;
 }());

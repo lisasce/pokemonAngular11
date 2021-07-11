@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PokemonSearchComponent = void 0;
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var operators_1 = require("rxjs/operators");
@@ -38,13 +39,13 @@ var PokemonSearchComponent = /** @class */ (function () {
         var link = ['/pokemons', pokemon.id];
         this.router.navigate(link);
     };
+    var _a;
     PokemonSearchComponent = __decorate([
         core_1.Component({
             selector: 'pokemon-search',
             templateUrl: './app/pokemons/searchComponent/search-pokemon.component.html'
         }),
-        __metadata("design:paramtypes", [pokemons_service_1.PokemonsService,
-            router_1.Router])
+        __metadata("design:paramtypes", [pokemons_service_1.PokemonsService, typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" ? _a : Object])
     ], PokemonSearchComponent);
     return PokemonSearchComponent;
 }());

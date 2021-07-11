@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PokemonFormComponent = void 0;
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var pokemons_service_1 = require("../pokemons.service");
@@ -63,6 +64,7 @@ var PokemonFormComponent = /** @class */ (function () {
         var link = ['/pokemons', this.pokemon.id];
         this.router.navigate(link);
     };
+    var _a;
     __decorate([
         core_1.Input(),
         __metadata("design:type", pokemon_1.Pokemon)
@@ -73,8 +75,7 @@ var PokemonFormComponent = /** @class */ (function () {
             templateUrl: './app/pokemons/formComponent/pokemon-form.component.html',
             styleUrls: ['./app/pokemons/formComponent/pokemon-form.component.css']
         }),
-        __metadata("design:paramtypes", [pokemons_service_1.PokemonsService,
-            router_1.Router])
+        __metadata("design:paramtypes", [pokemons_service_1.PokemonsService, typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" ? _a : Object])
     ], PokemonFormComponent);
     return PokemonFormComponent;
 }());

@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DetailPokemonComponent = void 0;
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var pokemons_service_1 = require("../pokemons.service");
@@ -38,12 +39,13 @@ var DetailPokemonComponent = /** @class */ (function () {
         this.pokemonsService.deletePokemon(pokemon)
             .subscribe(function (_) { return _this.goBack(); });
     };
+    var _a, _b;
     DetailPokemonComponent = __decorate([
         core_1.Component({
             selector: 'detail-pokemon',
             templateUrl: './app/pokemons/detailComponent/detail-pokemon.component.html'
         }),
-        __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router, pokemons_service_1.PokemonsService])
+        __metadata("design:paramtypes", [typeof (_a = typeof router_1.ActivatedRoute !== "undefined" && router_1.ActivatedRoute) === "function" ? _a : Object, typeof (_b = typeof router_1.Router !== "undefined" && router_1.Router) === "function" ? _b : Object, pokemons_service_1.PokemonsService])
     ], DetailPokemonComponent);
     return DetailPokemonComponent;
 }());

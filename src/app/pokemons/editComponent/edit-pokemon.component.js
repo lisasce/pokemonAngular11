@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.EditPokemonComponent = void 0;
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var pokemons_service_1 = require("../pokemons.service");
@@ -24,13 +25,13 @@ var EditPokemonComponent = /** @class */ (function () {
         this.pokemonsService.getPokemon(id)
             .subscribe(function (pokemon) { return _this.pokemon = pokemon; });
     };
+    var _a;
     EditPokemonComponent = __decorate([
         core_1.Component({
             selector: 'edit-pokemon',
             template: "\n    <h3 class=\"header center\">Edit {{ pokemon?.name }}</h3>\n        <p class=\"center\">\n            <img *ngIf=\"pokemon\" [src]=\"pokemon.picture\"/>\n        </p>\n    <pokemon-form [pokemon]=\"pokemon\"></pokemon-form>\n  ",
         }),
-        __metadata("design:paramtypes", [router_1.ActivatedRoute,
-            pokemons_service_1.PokemonsService])
+        __metadata("design:paramtypes", [typeof (_a = typeof router_1.ActivatedRoute !== "undefined" && router_1.ActivatedRoute) === "function" ? _a : Object, pokemons_service_1.PokemonsService])
     ], EditPokemonComponent);
     return EditPokemonComponent;
 }());

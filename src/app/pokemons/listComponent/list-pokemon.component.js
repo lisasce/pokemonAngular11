@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ListPokemonComponent = void 0;
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var pokemons_service_1 = require("../pokemons.service");
@@ -43,13 +44,14 @@ var ListPokemonComponent = /** @class */ (function () {
         var link = ['/pokemons/new'];
         this.router.navigate(link);
     };
+    var _a;
     ListPokemonComponent = __decorate([
         core_1.Component({
             selector: 'list-pokemon',
             templateUrl: './app/pokemons/listComponent/list-pokemon.component.html',
             styleUrls: ['./app/pokemons/listComponent/list-pokemon.component.css']
         }),
-        __metadata("design:paramtypes", [router_1.Router, pokemons_service_1.PokemonsService])
+        __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" ? _a : Object, pokemons_service_1.PokemonsService])
     ], ListPokemonComponent);
     return ListPokemonComponent;
 }());

@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PokemonsService = void 0;
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/common/http");
 var rxjs_1 = require("rxjs");
@@ -84,10 +85,11 @@ var PokemonsService = /** @class */ (function () {
         } // si c'est vide
         return this.http.get(this.pokemonsUrl + "/?name=" + term).pipe(operators_1.tap(function (_) { return _this.log("found pokemons matching \"" + term + "\""); }), operators_1.catchError(this.handleError('searchPokemons', [])));
     };
+    var _a;
     PokemonsService = __decorate([
         core_1.Injectable() // peut recevoir d'autres dependences
         ,
-        __metadata("design:paramtypes", [http_1.HttpClient])
+        __metadata("design:paramtypes", [typeof (_a = typeof http_1.HttpClient !== "undefined" && http_1.HttpClient) === "function" ? _a : Object])
     ], PokemonsService);
     return PokemonsService;
 }());

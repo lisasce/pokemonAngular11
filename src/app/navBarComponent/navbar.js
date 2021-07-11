@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.NavbarComponent = void 0;
 var core_1 = require("@angular/core");
 var auth_service_1 = require("../authentification/auth.service");
 var router_1 = require("@angular/router");
@@ -30,13 +31,14 @@ var NavbarComponent = /** @class */ (function () {
     NavbarComponent.prototype.goHome = function () {
         this.router.navigate(['/pokemons/all']);
     };
+    var _a, _b;
     NavbarComponent = __decorate([
         core_1.Component({
             selector: 'navbar',
             templateUrl: './app/navBarComponent/navbar.html',
             styleUrls: ['./app/navBarComponent/navbar.css']
         }),
-        __metadata("design:paramtypes", [auth_service_1.AuthService, router_1.Router, platform_browser_1.Title])
+        __metadata("design:paramtypes", [auth_service_1.AuthService, typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" ? _a : Object, typeof (_b = typeof platform_browser_1.Title !== "undefined" && platform_browser_1.Title) === "function" ? _b : Object])
     ], NavbarComponent);
     return NavbarComponent;
 }());

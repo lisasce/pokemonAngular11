@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.idGenerator = exports.urlGenerator = void 0;
 function urlGenerator() {
     // @ts-ignore
     var num = (Math.floor(Math.random() * 893) + 13).toString().padStart(3, '0');

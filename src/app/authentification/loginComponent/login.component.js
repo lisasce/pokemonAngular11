@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.LoginComponent = void 0;
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var auth_service_1 = require("../auth.service");
@@ -46,13 +47,14 @@ var LoginComponent = /** @class */ (function () {
         this.authService.logout();
         this.setMessage();
     };
+    var _a;
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'login',
             templateUrl: './app/authentification/loginComponent/login.component.html',
             styleUrls: ['./app/authentification/loginComponent/login.component.css']
         }),
-        __metadata("design:paramtypes", [auth_service_1.AuthService, router_1.Router])
+        __metadata("design:paramtypes", [auth_service_1.AuthService, typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" ? _a : Object])
     ], LoginComponent);
     return LoginComponent;
 }());
